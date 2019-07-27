@@ -1,0 +1,97 @@
+#my-collection{
+    max-width: 1142px;
+    margin: 0 auto;
+}
+
+#my-collection h3{
+     text-transform: uppercase;
+     padding: 0 15px;
+}
+
+#my-collection ul{
+    display: -ms-grid;
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    padding: 0;
+}
+
+#my-collection ul li {
+    list-style-type: none;
+    grid-column: span 1;
+    min-width: 0;
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    cursor: pointer;
+}
+#my-collection ul li .collection-action {
+    padding: 10px 20px;
+    font-size: 1.3em;
+}
+
+#my-collection ul li .collection-list{
+    color: #1F211F;
+    padding: 0 10px;
+    min-width: 330px;
+}
+
+
+#my-collection ul li .collection-action .fa{
+    float: right;
+    padding: 0 10px;
+    font-size: 26px;
+    color: #8B918C;
+}
+
+#my-collection ul li .collection-title{
+    color: #1F211F;
+}
+
+
+.photos {
+  /* Prevent vertical gaps */
+  /* line-height: 0; */
+   
+  -webkit-column-count: 3;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    3;
+  -moz-column-gap:      0px;
+  column-count:         3;
+  column-gap:           0px;  
+
+  width: 330px;
+}
+
+/* .photos div { */
+  /* Just in case there are inline attributes */
+  /* width: 100% !important; */
+  /* height: auto !important; */
+/* } */
+
+
+
+/* get screen width and set new display column*/
+@media screen and (min-width: 1024px) {
+    #my-collection  ul{
+        grid-template-columns: repeat(3, 1fr);
+    }
+  
+}
+
+@media screen and (max-width: 1023px) {
+  #my-collection  ul{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 770px) {
+  #my-collection  ul{
+        grid-template-columns: repeat(1, 1fr);
+    }
+  
+}
+
+
+
+

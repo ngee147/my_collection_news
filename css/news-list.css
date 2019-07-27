@@ -1,0 +1,122 @@
+#news-section{
+    max-width: 1142px;
+    margin: 0 auto;
+}
+
+#news-section h3{
+     text-transform: uppercase;
+     padding: 0 15px;
+}
+
+#news-section ul{
+    display: -ms-grid;
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    padding: 0;
+}
+
+#news-section ul li {
+    list-style-type: none;
+    grid-column: span 1;
+    min-width: 0;
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+#news-section ul li .new-container{
+     border-bottom: 1px solid #ddd;
+     flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+#news-section ul li .new-container a{
+    text-decoration: none;
+}
+
+#news-section ul li .new-container .news-from{
+    color: #78B774;
+     font-size: 0.6em;
+     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 0;
+}
+
+#news-section ul li .new-container .news-from span{
+    color: #505050;
+     font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 5px 5px 0;
+}
+
+#news-section ul li .new-container img{
+    width: 100%; 
+    height: 22vh;
+    object-fit: cover;
+}
+
+#news-section ul li .new-container p{
+    font-weight: bold;
+     color: #1F211F;
+    font-size: 1.3em;
+    font-family: "Times New Roman", Times, serif;
+}
+
+
+#news-section ul li .new-container .news-date{
+    font-family: Arial;
+    font-size: 0.8em;
+    color:#8B918C;
+}
+
+#news-section ul li .new-container .news-description{
+    font-family: Arial;
+    color:#423E3E;
+    padding: 10px 0;
+}
+
+#news-section ul li .new-container .news-action{
+    padding: 8px 8px;
+    font-size: 26px;
+    text-align: right;
+}
+
+#news-section ul li .new-container .news-action .fa{
+    color:#8B918C;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* get screen width and set new display column*/
+@media screen and (min-width: 1024px) {
+    #news-section  ul{
+        grid-template-columns: repeat(3, 1fr);
+    }
+   #news-section  ul li:not(:nth-child(3n+3)) {  
+        border-right: 1px solid #ddd;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+  #news-section  ul{
+        grid-template-columns: repeat(2, 1fr);
+    }
+     #news-section  ul li:not(:nth-child(2n+2)) {  
+        border-right: 1px solid #ddd;
+    }
+}
+
+@media screen and (max-width: 770px) {
+  #news-section  ul{
+        grid-template-columns: repeat(1, 1fr);
+    }
+      #news-section  ul li {  
+        border-right: none
+    }
+}
+
+
