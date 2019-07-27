@@ -62,20 +62,20 @@ include_once '../database/dbh.inc.php';
 
      /*reset all default design*/
       $("#register-section form input").removeClass('input-error');
-      $('#register-section .input-error-message').css({
+      $('#register-section .register-input-error-message').css({
             "color": "red", 
             "border": "1px solid red"
       });
-      $('#register-section .input-error-message').hide();
+      $('#register-section .register-input-error-message').hide();
 
 
      if(seccuss_registration == true){
 
-            $('#register-section .input-error-message').css({
+            $('#register-section .register-input-error-message').css({
                 "color": "green", 
                 "border": "1px solid green"
                 });
-            $("#register-section .input-error-message").text("Successful Register!");
+            $("#register-section .register-input-error-message").text("Successful Register!");
 
             /*reset input field*/
             $("#register-section form input[name='name']").val("");
@@ -87,18 +87,18 @@ include_once '../database/dbh.inc.php';
      }else{
          if(error_empty == true){
             $("#register-section form input").addClass('input-error');
-            $("#register-section .input-error-message").text("Please fill in all input field.");
+            $("#register-section .register-input-error-message").text("Please fill in all input field.");
          }else if(error_password_not_match == true){
             $("#register-section form input[type='password']").addClass('input-error');
-             $("#register-section .input-error-message").text("Password not match.");
+             $("#register-section .register-input-error-message").text("Password not match.");
          }else if(error_email_format == true){
             $("#register-section form input[name='email']").addClass('input-empty');
-            $("#register-section .input-error-message").text("Please enter correct email format.");
+            $("#register-section .register-input-error-message").text("Please enter correct email format.");
          }else if(error_user_exist == true){
-            $("#register-section .input-error-message").text("User already exist, please proceed to login");
+            $("#register-section .register-input-error-message").text("User already exist, please proceed to login");
          }
 
-         $('#register-section .input-error-message').show();
+         $('#register-section .register-input-error-message').show();
      }
 
  </script>

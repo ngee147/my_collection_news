@@ -7,7 +7,7 @@
     $(document).ready(function(){
         /* page load init*/
         $(".header-right a").eq(1).addClass('active');
-        $('.input-error-message').hide();
+        // $('.input-error-message').hide();
 
         /*registration submit*/
          $("#register-section form").on('submit', function (event) {
@@ -18,7 +18,7 @@
                    var password_repeat = $("#register-section form input[name='password-repeat']").val();
                    var submit = $("#register-section form button[name='submit']").val();
 
-                    $(".input-error-message").load("controllers/registration.inc.php",
+                    $(".register-input-error-message").load("controllers/registration.inc.php",
                     {
                         name: name,
                         email:email,
@@ -26,7 +26,7 @@
                         password_repeat:password_repeat,
                         submit:submit
                     });
-
+        });
     });
 </script>
 
@@ -49,7 +49,7 @@
             <label for="password-repeat"><b>Repeat Password</b></label>
             <input type="password" placeholder="Repeat Password" name="password-repeat" >
             
-            <div class="input-error-message"></div>
+            <div class="register-input-error-message"></div>
             
             <hr>
 
