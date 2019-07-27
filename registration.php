@@ -7,7 +7,7 @@
     $(document).ready(function(){
         /* page load init*/
         $(".header-right a").eq(1).addClass('active');
-        // $('.input-error-message').hide();
+        $('.input-error-message').hide();
 
         /*registration submit*/
          $("#register-section form").on('submit', function (event) {
