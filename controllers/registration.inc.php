@@ -29,7 +29,7 @@ include_once '../database/dbh.inc.php';
         $conn = DBH::getInstance();
 
         /*data validation to avoid duplicated user registration*/
-        $stmt = $conn->prepare("SELECT * FROM users WHERE email = ? LIMIT 1");
+        $stmt = $conn->prepare("SELECT * FROM usersinfo WHERE email = ? LIMIT 1");
         $stmt->execute([$email]);
         $count = $stmt->rowCount();
 
@@ -38,9 +38,8 @@ include_once '../database/dbh.inc.php';
         }else{
             
             /*regitser new user to db*/
-            $stmt = $conn->prepare("INSERT INTO users (name, email, password) 
-            VALUES (?,?,?)");
-             $stmt->execute([$name,$email,md5($password)]);
+            $stmt = $conn->prepare("INSERT INTO usersinfo (name, email, password) VALUES (?,?,?)");
+            $stmt->execute([$name,$email,md5($password)]);
 
             $seccuss_registration = true;
         }  
@@ -83,6 +82,8 @@ include_once '../database/dbh.inc.php';
             $("#register-section form input[name='password']").val("");
             $("#register-section form input[name='password-repeat']").val("");
             $("#register-section form button[name='submit']").val("");
+
+             $('#register-section .register-input-error-message').show();
          
      }else{
          if(error_empty == true){

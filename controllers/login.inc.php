@@ -24,7 +24,7 @@ include_once '../models/user-session.inc.php';
             $conn = DBH::getInstance();
 
                 /*login data validation*/
-                $stmt = $conn->prepare("SELECT * FROM users WHERE email = ? AND password = ? LIMIT 1");
+                $stmt = $conn->prepare("SELECT * FROM usersinfo WHERE email = ? AND password = ? LIMIT 1");
                 $stmt->execute([$email, md5($password)]);
                 $count = $stmt->rowCount();
 

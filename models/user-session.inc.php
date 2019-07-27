@@ -17,7 +17,7 @@ class UserSession{
                 setcookie(self::SESSION_ORIGIN_NAME, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 
                 $conn = DBH::getInstance();
-                $stmt = $conn->prepare("UPDATE users SET session = ? WHERE email = ?");
+                $stmt = $conn->prepare("UPDATE usersinfo SET session = ? WHERE email = ?");
                 $stmt->execute([$cookie_value,$email]);
 
                 //catch exception
@@ -47,7 +47,7 @@ class UserSession{
         if(!empty($session)){
 
             $conn = DBH::getInstance();
-            $stmt = $conn->prepare("SELECT * FROM users WHERE session = ? LIMIT 1");
+            $stmt = $conn->prepare("SELECT * FROM usersinfo WHERE session = ? LIMIT 1");
             $stmt->execute([$session]);
             $count = $stmt->rowCount();
 
@@ -70,7 +70,7 @@ class UserSession{
         if(!empty($session)){
 
             $conn = DBH::getInstance();
-            $stmt = $conn->prepare("SELECT * FROM users WHERE session = ? LIMIT 1");
+            $stmt = $conn->prepare("SELECT * FROM usersinfo WHERE session = ? LIMIT 1");
             $stmt->execute([$session]);
             $count = $stmt->rowCount();
 
@@ -92,7 +92,7 @@ class UserSession{
         $session = $this->getUserSessionKey();
 
          $conn = DBH::getInstance();
-         $stmt = $conn->prepare("UPDATE users SET session = ? WHERE session = ?");
+         $stmt = $conn->prepare("UPDATE usersinfo SET session = ? WHERE session = ?");
          $stmt->execute(["",$session]);
 
         return true;
