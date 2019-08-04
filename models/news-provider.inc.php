@@ -7,7 +7,7 @@ include 'models/news.inc.php';
 
 class NewsProvider {
 
-    private const API_KEY = "2f89ac3867194643a3287b891b2c107a";
+    private const API_KEY = "[API KEY]";
 
     //property for retrieve headline
     private const HEADLINE_URL ="https://newsapi.org/v2/top-headlines?";
